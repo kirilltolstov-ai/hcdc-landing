@@ -9,58 +9,186 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
-      height: 100vh;
-      background: url('background.png') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       font-family: 'Helvetica Neue', sans-serif;
-      color: white;
-      text-align: center;
-      backdrop-filter: brightness(0.5);
-      padding: 0 20px;
+      background: #0e0e10;
+      color: #f1f1f1;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 10;
+      backdrop-filter: blur(8px);
     }
 
     .logo {
-      width: 140px;
-      height: auto;
-      margin-bottom: 30px;
-      filter: drop-shadow(0 0 8px rgba(0,0,0,0.3));
+      height: 40px;
+    }
+
+    nav a {
+      color: #f1f1f1;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00aaff;
+    }
+
+    section {
+      padding: 120px 20px;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    #hero {
+      background: url('background.png') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
     }
 
     h1 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
     }
 
     p {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       max-width: 800px;
+      margin: 0 auto 25px;
       line-height: 1.6;
-      margin-bottom: 50px;
-      opacity: 0.95;
     }
 
-    .footer {
-      position: absolute;
-      bottom: 20px;
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00aaff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
       font-size: 0.9rem;
       opacity: 0.7;
+      background: #0a0a0b;
+    }
+
+    .vendors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .vendor-card {
+      background: #1a1a1d;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: left;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .vendor-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 20px rgba(0, 170, 255, 0.4);
+    }
+
+    .vendor-card h3 {
+      color: #00aaff;
+      margin-bottom: 10px;
+    }
+
+    .contact-info a {
+      color: #00aaff;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <img src="logo.png" alt="Converged Platforms Logo" class="logo">
-  <h1>Converged Platforms (HCDC)</h1>
-  <p>
-    Converged Platforms (HCDC) is a dynamic distributor of IT infrastructure software, representing the convergence of technology, innovation, and strategic partnership. Founded in Bishkek, Kyrgyzstan, the company serves as a regional hub, connecting global vendors with fast-growing markets across Central Asia and the Middle East — including Kyrgyzstan, Kazakhstan, Uzbekistan, Armenia, Israel, and the UAE. Our focus is on enabling enterprises with robust, scalable, and secure IT infrastructure solutions that empower digital transformation and sustainable growth.
-  </p>
-  <div class="footer">© 2025 Converged Platforms (HCDC). All rights reserved.</div>
+  <header>
+    <img src="logo.png" alt="Converged Platforms Logo" class="logo">
+    <nav>
+      <a href="#about">About</a>
+      <a href="#vendors">Vendors</a>
+      <a href="#contacts">Contacts</a>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h1>Converged Platforms (HCDC)</h1>
+    <p>Dynamic distributor of IT infrastructure software — bridging innovation, technology, and strategic partnership across Central Asia and the Middle East.</p>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      Converged Platforms (HCDC) is a dynamic distributor of IT infrastructure software, representing the convergence of technology, innovation, and strategic partnership.
+      Founded in Bishkek, Kyrgyzstan, the company serves as a regional hub, connecting global vendors with fast-growing markets across Central Asia and the Middle East — including Kyrgyzstan, Kazakhstan, Uzbekistan, Armenia, Israel, and the UAE.
+      Our focus is on enabling enterprises with robust, scalable, and secure IT infrastructure solutions that empower digital transformation and sustainable growth.
+    </p>
+  </section>
+
+  <section id="vendors">
+    <h2>Our Vendors</h2>
+    <div class="vendors-grid">
+      <a href="https://www.sangfor.com" target="_blank" class="vendor-card">
+        <h3>Sangfor</h3>
+        <p>
+          Sangfor is a leading global vendor of IT infrastructure solutions, specializing in Cloud Computing and Network Security with a wide range of products and services.
+        </p>
+      </a>
+      <a href="https://www.info2tech.com" target="_blank" class="vendor-card">
+        <h3>Information2</h3>
+        <p>
+          Information2 is committed to the development and promotion of dynamic file byte-level replication, database semantic-level replication, volume layer block-level replication, and other advanced information technologies.
+        </p>
+      </a>
+      <a href="https://www.geetest.com/en" target="_blank" class="vendor-card">
+        <h3>Geetest</h3>
+        <p>
+          GeeTest combines biometric data and artificial intelligence to create a better experience for users. Cooperating with over 360,000 enterprises worldwide including Airbnb, Binance, and Xiaomi, GeeTest helps solve bot and security challenges globally.
+        </p>
+      </a>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <h2>Contact Us</h2>
+    <p class="contact-info">
+      📍 Bishkek, Kyrgyzstan<br>
+      ✉️ <a href="mailto:info@hcdc.kg">info@hcdc.kg</a><br>
+      🌐 <a href="https://www.hcdc.kg" target="_blank">www.hcdc.kg</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Converged Platforms (HCDC). All rights reserved.
+  </footer>
 </body>
 </html>
